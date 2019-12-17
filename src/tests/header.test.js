@@ -24,8 +24,11 @@ describe("Test sur le Header", () => {
                 <Header />
             </RootTest>
         );
+        // .at(2) retourne le 3e <a href> du text  
         expect(wrapper.find("a").at(2).text()).toEqual("Connexion");
+        // On va simuler le cliquer pour regarder s'il devient déconnexion
         wrapper.find("a").at(2).simulate("click");
         expect(wrapper.find("a").at(2).text()).toEqual("Déconnexion");
+        console.log(wrapper.debug());
     })
 });
