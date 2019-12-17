@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import authentificationReducer from '../reducers/authentification-reducer';
+import AuthentificationReducer from '../reducers/authentification-reducer';
 import {SET_ATHENTIFICATION, INCREMENT_ACTION_COUNT} from '../actions/action-types';
 import {setAuthentification, incrementActionCount} from '../actions';
 
@@ -30,5 +30,25 @@ describe("Test sur le Header", () => {
         wrapper.find("a").at(2).simulate("click");
         expect(wrapper.find("a").at(2).text()).toEqual("Déconnexion");
         console.log(wrapper.debug());
-    })
+    });
+
+    it("Test le payload d'une action", () => {
+        const action = incrementActionCount();
+        expect(action.type).toEqual(INCREMENT_ACTION_COUNT);
+    });
+
+    it("Test le reducer authetification sans action", () => {
+        const initialState = {
+            isLoggedIn : false
+        }
+        expect(AuthentificationReducer(initialState, {}).isLoggedIn).toEqual(false);
+    });
+
+    it("Test le reducer authetification sans action type", () => {
+        const action = {type: SET_ATHENTIFICATION, payload: true}
+        const initialState = {
+            isLoggedIn : false
+        }
+        expect(AuthentificationReducer(initialState, action).isLoggedIn).toEqual(false);
+    });
 });
