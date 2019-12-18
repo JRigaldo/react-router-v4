@@ -6,6 +6,7 @@ render () {
             <div>
                 {/* Bienvenue ! {this.props.match.params.id} */}
                 Bienvenue ! 
+                Si vous voulez connaître les ressources veuillez vous connectez.
             </div>
         )
     }

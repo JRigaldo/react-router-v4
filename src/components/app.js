@@ -5,6 +5,7 @@ import RequireAuthentification from '../helpers/require-authentification';
 import Home from './home';
 import TodoApp from './todo-app';
 import Ressources from './ressources';
+import Selecteur from '../containers/ressources-selecteur';
 require("../style.css");
 
 export default class App extends Component {
@@ -13,8 +14,9 @@ export default class App extends Component {
       <div>
         <Header />
         <Switch>
-          {/* <Route exact path="/:id" component={Home} /> */}
-          <Route exact path="/" component={TodoApp} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/todoapp" component={TodoApp} />
+          <Route exact path="/selecteur" component={Selecteur} />
           <Route exact path="/ressources" component={RequireAuthentification(Ressources)} />
         </Switch>
         

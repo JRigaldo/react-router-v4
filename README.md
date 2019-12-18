@@ -63,7 +63,21 @@ MIDDLEWEAR
 
 LES TESTS
 - Import {shallow} permet de simuler les tests provient de la librairie enzyme de Airbnb (Jest librairie comme Mocha est déjà intégré dans react)
-- Enzyme permet de faire des tests unitaires très précis sans que ça Render toute l’application
--  
+- Enzyme avce shallow permet de faire des tests unitaires très précis sans que ça Render toute l’application
+
+LES SELECTEURS
+- Les selecteurs dans react, ça sert à décharger le mapStateToProps et à regrouper les différentes requêtes du state.
+- Permet d'optimiser l'application
+ex: MapStateToProps = state => {
+    return {
+        panierDuProduitEnPromotionOuGratuit: state.unEndroit.unAutre.AutreChose.panier.map(produit => return produit.type == "Promotion" || produit.type == "Free" )
+
+        AmisAvecPromotionDansLePanier: state...
+
+        ...
+
+    }
+}
+
 
 
