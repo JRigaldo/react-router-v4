@@ -78,6 +78,12 @@ ex: MapStateToProps = state => {
 
     }
 }
+- Dans l'exercice, un selecteur est une action générique standard mise dans le dossier selectors
+- Une fonction qui prend le state en paramètre et qui retourne ce que je veux
+- Le selecteur c'est une fonction qui mise avec le state en paramètre dans l'objet de mapStateToProps
+- INSTALL reselect qui permet de fusionner les selecteurs pour entre plus efficiant
+- INSTALL loadash est une petite librairie qui permet de faire des petit calaculs sur les tableaux et les objets
+- Voir la video
 
 
 

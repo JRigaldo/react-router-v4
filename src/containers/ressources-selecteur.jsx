@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {addRessource} from '../actions'
+import {getIntegerList, getContainsOneList, getPrimeNumber, getSpecialNumbersList} from '../selectors'
 
 class RessourcesSelecteur extends Component  {
-    renderResources = ressources => {
+    renderRessources = ressources => {
         return ressources.map(ressource => <li key={ressource}>{ressource}</li>)
     }
     render () {
@@ -14,16 +15,19 @@ class RessourcesSelecteur extends Component  {
                 </div>
                 <div className="col">
                     Entiers
-                    <ul>{this.renderResources(this.props.integerRessources)}</ul>
+                    <ul>{this.renderRessources(this.props.integerRessources)}</ul>
                 </div>
                 <div className="col">
                     Contiennent "1"
+                    <ul>{this.renderRessources(this.props.containsOneRessources)}</ul>
                 </div>
                 <div className="col">
                     Entier premiers
+                    <ul>{this.renderRessources(this.props.primeNumber)}</ul>
                 </div>
                 <div className="col">
                     Entiers premiers contenants "1"
+                    <ul>{this.renderRessources(this.props.specialNumberList)}</ul>
                 </div>
             </div >
         )
@@ -32,7 +36,10 @@ class RessourcesSelecteur extends Component  {
 
 const mapStateToProps = (state) => {
     return { 
-        integerRessources : state.ressource.ressourceList
+        integerRessources : getIntegerList(state),
+        containsOneRessources : getContainsOneList(state),
+        primeNumber : getPrimeNumber(state),
+        specialNumberList : getSpecialNumbersList(state)
     }
 }
 
