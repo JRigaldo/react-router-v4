@@ -85,5 +85,9 @@ ex: MapStateToProps = state => {
 - INSTALL loadash est une petite librairie qui permet de faire des petit calaculs sur les tableaux et les objets
 - Voir la video
 
+IMPORTANT EN DEVELOPPEMENT
+- INSTALL meadllewear immutable state pour pas avoir de conflit quand on code et qu'on fait des erreur dans la mutation de state
+- INSTALL immmutable.js à voir dans la vidéo pour la présentation de cet outil
+
 
 
