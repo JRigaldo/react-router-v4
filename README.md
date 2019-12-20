@@ -91,3 +91,27 @@ IMPORTANT EN DEVELOPPEMENT
 
 
 
+"server": "nodemon server/index.js"
+
+JE VIENS D'INSTALLER nodemon body-parser express ET JE L'AI CONFIGUER POUR POUVOIR FAIRE UN res.post()
+J'AI MIS EN PLACE LE DOSSIER CONTROLLER OU SE TROUVE L'authentification qui est inporté dans la route
+
+AUTHENTIFICATION
+- On va enregistrer un id pour le login user dans mangoDB et lui retourner qu'il est connecté
+    - Pour ça on connecte le model user à l'authentification dans controller, on import lodash
+    - Gérer les cas d'erreurs
+    - user.findOne() trouve nous le une erreur ou si le user est déjà présent avec un statut 404
+    - Et s'il n'as pas de mot de passe créer une nouvelle instance user 
+    - On send les status dans des objets
+    - On fait la même chose avec lodash.isEmpty(email), on send les status dans des objets
+
+    - Au départ on a une fake data de res.send({"login": "blblabla"}) en post dans la route
+    - Il faut mettre ça dans une nouvelle instance et sauver celle-ci, de "user" en locurance. Car pour l'intsant il n'y a pas de login de user défini
+    
+ENCRYPTION BCRYPT SALE
+    - La manière d'encryptage pour une application et de salé le mot de passe c'est à dire d'y ajouter des lettres et des chiffres avec un algrorythme de Bcrypte et ensuite d'utiliser la librairie de Bcrypte pour l'encrypter. Si l'utilisateur à perdu le mot de passe, ou pour le loger, on passera par la même procèdure pour le comparer avec l'original parce qu'on l'a mais on le connait pas.
+    - Cela se passe dans le model du user.js
+
+
+
+
