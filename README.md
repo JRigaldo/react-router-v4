@@ -109,8 +109,20 @@ AUTHENTIFICATION
     - Il faut mettre ça dans une nouvelle instance et sauver celle-ci, de "user" en locurance. Car pour l'intsant il n'y a pas de login de user défini
     
 ENCRYPTION BCRYPT SALE
+    - Il faut être connecté à Mlab
     - La manière d'encryptage pour une application et de salé le mot de passe c'est à dire d'y ajouter des lettres et des chiffres avec un algrorythme de Bcrypte et ensuite d'utiliser la librairie de Bcrypte pour l'encrypter. Si l'utilisateur à perdu le mot de passe, ou pour le loger, on passera par la même procèdure pour le comparer avec l'original parce qu'on l'a mais on le connait pas.
     - Cela se passe dans le model du user.js
+    - Pour créer un token (clé secrète ) c'est jwtToken permet de d'ancoder et de décoder le password avec des methode jwtToken. Ce qui permettra d'identifier un utilisateur via le token.
+    - Pour élaobrer des stratégies de sécurité c'est passportJS
+    
+    INSTALL
+    - npm install jwt-simple passport passport-jwt passport-local --save
+    
+    - config.js à la racine -> module.exports = {secret: "au bol"} -> authentification.js -> import config + jwt-simple
+    - Création d'une fonction qui getTokenForUser(user) qui va utiliser les libraries et le token
+    - res.json({token: getTokenForUser(user)})
+
+    
 
 
 
