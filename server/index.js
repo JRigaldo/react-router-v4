@@ -7,7 +7,7 @@ const router = require('./route');
 const http = require('http');
 const mongoose = require('mongoose');
 //DB setup
-mongoose.connect("mongodb+srv://jeremy:30722009j@cluster0-hnjl7.mongodb.net/test?retryWrites=true&w=majority", { useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb+srv://jeremy:30722009@cluster0-nssmf.mongodb.net/test?retryWrites=true&w=majority", { useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true });
 mongoose.connection
     .once('open', () => console.log("Connecté à Mlab"))
     .on('error', error => console.log("Erreur de connection à Mlab : ", error));

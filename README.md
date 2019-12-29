@@ -122,6 +122,10 @@ ENCRYPTION BCRYPT SALE
     - Création d'une fonction qui getTokenForUser(user) qui va utiliser les libraries et le token
     - res.json({token: getTokenForUser(user)})
 
+    - Voir si l'utilisateur est légitime. A-t-il le droit d'accèder à la ressource qu'il demande...
+    - passportJS importé depuis la route.js
+    - On va concevoir notre strategie pour passport dans services/passport.js
+
     
 
 
